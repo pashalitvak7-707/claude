@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оплата абонемента — Спортика | Онлайн-оплата картой</title>
+  <meta name="description" content="Онлайн-оплата абонементов и занятий в школе «Спортика». Оплата картой, оплата по ссылке, статус платежа и электронный чек. Безопасный эквайринг.">
+  <link rel="canonical" href="https://sportika.example/oplata.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { primary: '#1E3A8A', secondary: '#3B82F6', cta: '#F97316', bg: '#EFF6FF' },
+      fontFamily: { display: ['"Baloo 2"', 'sans-serif'], body: ['Nunito', 'sans-serif'] }
+    } } };
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-x" style="display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <span class="brand-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span>
+        <span class="font-display" style="font-size:22px;font-weight:700;color:var(--primary);">Спортика</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Главное меню">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="napravleniya.html">Направления</a>
+        <a class="nav-link" href="raspisanie.html">Расписание</a>
+        <a class="nav-link" href="trenery.html">Тренеры</a>
+        <a class="nav-link is-current" href="oplata.html">Оплата</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3">
+        <a class="btn btn-ghost btn-sm" href="cabinet.html">Войти</a>
+        <button class="btn btn-cta btn-sm" data-open-booking="">Записаться на пробное</button>
+      </div>
+      <button class="lg:hidden btn btn-ghost btn-sm" data-burger aria-label="Меню" aria-expanded="false" style="padding:10px 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="lg:hidden container-x pb-4" data-mobile-nav hidden>
+      <div class="clay-soft p-3 flex flex-col gap-1">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="napravleniya.html">Направления</a>
+        <a class="nav-link" href="raspisanie.html">Расписание</a>
+        <a class="nav-link" href="trenery.html">Тренеры</a>
+        <a class="nav-link" href="oplata.html">Оплата</a>
+        <a class="nav-link" href="cabinet.html">Личный кабинет</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-bottom:24px;">
+      <div class="container-x">
+        <nav class="muted text-sm mb-4" aria-label="Хлебные крошки"><a href="index.html" style="color:var(--secondary);text-decoration:none;">Главная</a> / Оплата</nav>
+        <span class="eyebrow">Оплата</span>
+        <h1 style="font-size:clamp(32px,5vw,52px);margin:12px 0;">Оплата абонемента онлайн</h1>
+        <p class="muted" style="font-size:18px;max-width:60ch;">Оплатите картой за минуту. Чек придёт на e-mail, а статус и остаток занятий появятся в личном кабинете автоматически.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px;">
+      <div class="container-x grid lg:grid-cols-[1fr_380px] gap-8 items-start">
+
+        <!-- Checkout form -->
+        <div class="clay p-7" data-reveal>
+          <h2 class="text-2xl">Данные платежа</h2>
+
+          <!-- pay state -->
+          <form id="pay-form" class="mt-6">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="field"><label for="pay-name">Имя плательщика</label><input id="pay-name" type="text" required autocomplete="name" placeholder="Анна Иванова"></div>
+              <div class="field"><label for="pay-mail">E-mail для чека</label><input id="pay-mail" type="email" required autocomplete="email" placeholder="anna@example.ru"></div>
+            </div>
+            <div class="field mt-4"><label for="pay-child">Ребёнок / абонемент</label>
+              <select id="pay-child"><option>Тимур — Гимнастика, 8 занятий — 5 600 ₽</option><option>София — Плавание, 8 занятий — 6 400 ₽</option><option>Другой абонемент</option></select>
+            </div>
+
+            <h3 class="text-lg mt-7 mb-3">Банковская карта</h3>
+            <div class="field"><label for="pay-card">Номер карты</label>
+              <input id="pay-card" inputmode="numeric" required placeholder="0000 0000 0000 0000" maxlength="19"
+                oninput="this.value=this.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim()">
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+              <div class="field"><label for="pay-exp">Срок (ММ/ГГ)</label><input id="pay-exp" inputmode="numeric" required placeholder="12/27" maxlength="5" oninput="this.value=this.value.replace(/\D/g,'').replace(/(.{2})(.{1,2})/,'$1/$2')"></div>
+              <div class="field"><label for="pay-cvc">CVC</label><input id="pay-cvc" inputmode="numeric" required placeholder="•••" maxlength="3" oninput="this.value=this.value.replace(/\D/g,'')"></div>
+            </div>
+            <label class="flex items-start gap-3 mt-4" style="font-size:13px;color:var(--ink-soft);cursor:pointer;">
+              <input type="checkbox" required style="width:18px;height:18px;margin-top:3px;flex:none;">
+              <span>Принимаю условия <a href="#" style="color:var(--secondary);font-weight:700;">договора оферты</a> и согласие на обработку данных.</span>
+            </label>
+            <button type="submit" class="btn btn-cta btn-block mt-6" id="pay-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>
+              Оплатить 5 600 ₽
+            </button>
+          </form>
+
+          <!-- success state -->
+          <div id="pay-success" hidden class="text-center py-6">
+            <span class="icon-tile" style="margin-inline:auto;width:72px;height:72px;background:#DCFCE7;color:#16A34A;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <h2 class="text-2xl mt-4">Оплата прошла успешно</h2>
+            <p class="muted mt-2">Чек отправлен на e-mail. Абонемент активирован, данные переданы в систему учёта и личный кабинет.</p>
+            <div class="clay-soft p-4 mt-5 text-left inline-block" style="min-width:260px;">
+              <div class="flex justify-between text-sm"><span class="muted">Платёж №</span><b>SP-100482</b></div>
+              <div class="flex justify-between text-sm mt-1"><span class="muted">Статус</span><span class="badge badge-green">Оплачено</span></div>
+              <div class="flex justify-between text-sm mt-1"><span class="muted">Сумма</span><b>5 600 ₽</b></div>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-center mt-6">
+              <a class="btn btn-primary" href="cabinet.html">Перейти в кабинет</a>
+              <button class="btn btn-ghost" onclick="spToast('Чек отправлен повторно')">Скачать чек</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: summary + alternatives + security -->
+        <aside class="flex flex-col gap-5" data-reveal>
+          <div class="clay p-6">
+            <h3 class="text-lg">Ваш заказ</h3>
+            <div class="flex items-center gap-3 mt-4">
+              <span style="width:48px;height:48px;border-radius:14px;background:#DBEAFE;color:#1E3A8A;display:grid;place-items:center;font-weight:800;flex:none;">ТИ</span>
+              <div style="flex:1;"><b>Гимнастика · 8 занятий</b><div class="muted text-sm">Тимур · Ольга Петрова</div></div>
+            </div>
+            <hr class="divider my-4">
+            <div class="flex justify-between text-sm"><span class="muted">Абонемент</span><span>5 600 ₽</span></div>
+            <div class="flex justify-between text-sm mt-1"><span class="muted">Скидка</span><span style="color:#16A34A;">0 ₽</span></div>
+            <div class="flex justify-between mt-3 pt-3" style="border-top:1px solid var(--line);"><b>К оплате</b><b class="font-display text-xl" style="color:var(--primary)">5 600 ₽</b></div>
+          </div>
+
+          <div class="clay-soft p-6">
+            <h3 class="text-lg">Оплата по ссылке</h3>
+            <p class="muted text-sm mt-2">Нет карты под рукой? Отправим ссылку на оплату в SMS — оплатите когда удобно.</p>
+            <button class="btn btn-ghost btn-block mt-4" onclick="spToast('Ссылка на оплату отправлена в SMS')">Получить ссылку в SMS</button>
+          </div>
+
+          <div class="clay-soft p-6">
+            <div class="flex items-center gap-3">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+              <b>Безопасный платёж</b>
+            </div>
+            <p class="muted text-sm mt-2">Данные карты обрабатываются через защищённый эквайринг банка. Мы не храним номер карты.</p>
+            <div class="flex gap-2 mt-3">
+              <span class="badge badge-blue">Visa</span><span class="badge badge-blue">Mastercard</span><span class="badge badge-blue">МИР</span><span class="badge badge-blue">SberPay</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--primary);color:#DBEAFE;">
+    <div class="container-x" style="padding-block:56px;">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;"><span class="brand-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span><span class="font-display" style="font-size:22px;color:#fff;font-weight:700;">Спортика</span></div>
+          <p class="mt-4 text-sm" style="color:#BFDBFE;">Детская спортивная школа. Воспитываем здоровье, характер и радость движения с 2013 года.</p>
+        </div>
+        <div><h4 style="color:#fff;font-size:16px;">Навигация</h4><ul class="mt-3 flex flex-col gap-2 text-sm"><li><a href="napravleniya.html" style="color:#BFDBFE;text-decoration:none;">Направления</a></li><li><a href="raspisanie.html" style="color:#BFDBFE;text-decoration:none;">Расписание</a></li><li><a href="trenery.html" style="color:#BFDBFE;text-decoration:none;">Тренеры</a></li><li><a href="oplata.html" style="color:#BFDBFE;text-decoration:none;">Оплата</a></li><li><a href="cabinet.html" style="color:#BFDBFE;text-decoration:none;">Личный кабинет</a></li></ul></div>
+        <div><h4 style="color:#fff;font-size:16px;">Контакты</h4><ul class="mt-3 flex flex-col gap-2 text-sm" style="color:#BFDBFE;"><li>Москва, ул. Спортивная, 12</li><li><a href="tel:+74951234567" style="color:#fff;text-decoration:none;font-weight:700;">+7 (495) 123-45-67</a></li><li>ежедневно 9:00–21:00</li></ul></div>
+        <div><h4 style="color:#fff;font-size:16px;">Готовы начать?</h4><p class="text-sm mt-3" style="color:#BFDBFE;">Первое занятие бесплатно.</p><button class="btn btn-cta btn-sm mt-3" data-open-booking="">Записаться</button></div>
+      </div>
+      <hr class="divider" style="background:#3B5BA9;margin-block:28px;">
+      <div class="flex flex-wrap justify-between gap-3 text-sm" style="color:#93C5FD;"><span>© <span data-year></span> Спортика. Все права защищены.</span><span>Политика конфиденциальности · Договор оферты</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-cta"><button class="btn btn-cta btn-block" data-open-booking="">Записаться на пробное</button></div>
+
+  <div class="modal-backdrop" data-modal="booking" hidden role="dialog" aria-modal="true" aria-labelledby="bk-title">
+    <div class="modal">
+      <div class="flex items-start justify-between gap-4">
+        <div><h3 id="bk-title" style="font-size:24px;">Запись на пробное</h3><p class="muted text-sm mt-1" data-modal-context hidden></p></div>
+        <button data-close-modal aria-label="Закрыть" class="btn btn-ghost btn-sm" style="padding:8px;min-height:auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <form class="mt-5" data-mock-form data-success="Готово! Заявка в обработке, скоро перезвоним.">
+        <div class="field"><label for="m-name">Имя родителя</label><input id="m-name" name="name" type="text" required autocomplete="name" placeholder="Анна"></div>
+        <div class="field mt-4"><label for="m-phone">Телефон</label><input id="m-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <div class="field"><label for="m-dir">Направление</label><select id="m-dir" name="direction"><option>Гимнастика</option><option>Единоборства</option><option>Плавание</option><option>Игровые виды</option><option>Ещё не выбрали</option></select></div>
+          <div class="field"><label for="m-age">Возраст</label><select id="m-age" name="age"><option>3–5 лет</option><option>6–9 лет</option><option>10–14 лет</option></select></div>
+        </div>
+        <label class="flex items-start gap-3 mt-4" style="font-size:13px;color:var(--ink-soft);cursor:pointer;"><input type="checkbox" required style="width:18px;height:18px;margin-top:3px;flex:none;"><span>Согласен на обработку персональных данных.</span></label>
+        <button type="submit" class="btn btn-cta btn-block mt-5">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* Payment page: mock async pay -> success state */
+    (function () {
+      var form = document.getElementById('pay-form');
+      var btn = document.getElementById('pay-btn');
+      var success = document.getElementById('pay-success');
+      if (!form) { return; }
+      var child = document.getElementById('pay-child');
+      function priceFor(v){ return v && v.indexOf('6 400') > -1 ? '6 400 ₽' : '5 600 ₽'; }
+      if (child) { child.addEventListener('change', function(){ btn.lastChild.textContent = ' Оплатить ' + priceFor(child.value); }); }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var consent = form.querySelector('input[type=checkbox]');
+        if (consent && !consent.checked) { window.spToast('Подтвердите согласие с офертой'); return; }
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> Обработка платежа…';
+        setTimeout(function () {
+          form.hidden = true;
+          success.hidden = false;
+          var amt = success.querySelectorAll('b');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 1400);
+      });
+    })();
+  </script>
+</body>
+</html>

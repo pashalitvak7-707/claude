@@ -1,0 +1,207 @@
+/* =====================================================================
+   Спортика — детская спортивная школа
+   Design system: Claymorphism-lite
+   Palette: #1E3A8A primary · #3B82F6 secondary · #F97316 CTA · #EFF6FF bg
+   Fonts: Baloo 2 (headings) / Nunito (body)
+   ===================================================================== */
+
+:root {
+  --primary: #1E3A8A;
+  --primary-600: #1D4ED8;
+  --secondary: #3B82F6;
+  --cta: #F97316;
+  --cta-600: #EA580C;
+  --bg: #EFF6FF;
+  --surface: #FFFFFF;
+  --ink: #0F172A;      /* slate-900 — body text, 4.5:1+ */
+  --ink-soft: #475569; /* slate-600 — muted text */
+  --line: #DBEAFE;     /* blue-100 — borders */
+  --green: #22C55E;
+  --pink: #EC4899;
+  --violet: #8B5CF6;
+  --radius: 22px;
+  --radius-sm: 14px;
+  /* Clay double-shadow: soft outer + subtle lift */
+  --clay: 0 10px 24px -8px rgba(30, 58, 138, 0.22), 0 2px 0 0 rgba(255,255,255,0.6) inset;
+  --clay-sm: 0 6px 16px -6px rgba(30, 58, 138, 0.20);
+  --clay-cta: 0 10px 22px -6px rgba(249, 115, 22, 0.45);
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  color: var(--primary);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Layout helpers ---------- */
+.container-x { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
+.section { padding-block: clamp(48px, 8vw, 96px); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--secondary);
+}
+
+/* ---------- Surfaces / cards (clay) ---------- */
+.clay {
+  background: var(--surface);
+  border: 3px solid #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--clay);
+}
+.clay-soft {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--clay-sm);
+  border: 1px solid var(--line);
+}
+.card-hover { transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+.card-hover:hover {
+  box-shadow: 0 18px 36px -10px rgba(30,58,138,.30);
+  transform: translateY(-4px);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 16px;
+  padding: 14px 26px; border-radius: 999px; cursor: pointer;
+  border: none; text-decoration: none; min-height: 48px;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-cta { background: var(--cta); color: #fff; box-shadow: var(--clay-cta); }
+.btn-cta:hover { background: var(--cta-600); }
+.btn-primary { background: var(--primary); color: #fff; box-shadow: 0 8px 18px -6px rgba(30,58,138,.5); }
+.btn-primary:hover { background: var(--primary-600); }
+.btn-ghost { background: #fff; color: var(--primary); border: 2px solid var(--line); }
+.btn-ghost:hover { border-color: var(--secondary); background: var(--bg); }
+.btn-sm { padding: 10px 18px; min-height: 42px; font-size: 15px; }
+.btn-block { width: 100%; }
+
+/* ---------- Chips / tags ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px;
+  background: var(--bg); color: var(--primary); border: 1px solid var(--line);
+  cursor: pointer; transition: all .18s ease;
+}
+.chip:hover { border-color: var(--secondary); }
+.chip[aria-pressed="true"], .chip.is-active {
+  background: var(--primary); color: #fff; border-color: var(--primary);
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 999px; font-weight: 800; font-size: 12px;
+}
+.badge-green { background: #DCFCE7; color: #15803D; }
+.badge-orange { background: #FFEDD5; color: #C2410C; }
+.badge-red { background: #FEE2E2; color: #B91C1C; }
+.badge-blue { background: #DBEAFE; color: var(--primary); }
+
+/* ---------- Forms ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 700; font-size: 14px; color: var(--ink); }
+.field input, .field select, .field textarea {
+  font-family: inherit; font-size: 16px; color: var(--ink);
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  border: 2px solid var(--line); background: #fff; width: 100%;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(59,130,246,.18);
+}
+.field .hint { font-size: 12px; color: var(--ink-soft); }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(239,246,255,.85); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-link {
+  font-weight: 700; color: var(--primary); text-decoration: none; padding: 8px 12px;
+  border-radius: 10px; transition: background-color .18s ease, color .18s ease;
+}
+.nav-link:hover { background: #fff; }
+.nav-link.is-current { color: var(--cta-600); }
+
+.brand-dot {
+  width: 38px; height: 38px; border-radius: 12px;
+  background: var(--cta); display: grid; place-items: center;
+  box-shadow: var(--clay-cta); color: #fff;
+}
+
+/* ---------- Floating mobile CTA ---------- */
+.floating-cta {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 45;
+  display: none;
+}
+@media (max-width: 768px) { .floating-cta { display: block; } }
+
+/* ---------- Accordion (FAQ) ---------- */
+.acc-item { border-radius: var(--radius-sm); overflow: hidden; }
+.acc-trigger {
+  width: 100%; text-align: left; padding: 18px 20px; cursor: pointer;
+  font-family: 'Baloo 2'; font-weight: 600; font-size: 17px; color: var(--primary);
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  background: #fff; border: none;
+}
+.acc-panel { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
+.acc-panel-inner { padding: 0 20px 18px; color: var(--ink-soft); }
+.acc-item.open .acc-icon { transform: rotate(45deg); }
+.acc-icon { transition: transform .2s ease; color: var(--cta); flex: none; }
+
+/* ---------- Modal ---------- */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 60; display: none;
+  background: rgba(15,23,42,.55); backdrop-filter: blur(3px);
+  padding: 20px; overflow-y: auto;
+}
+.modal-backdrop.open { display: grid; place-items: center; }
+.modal {
+  width: 100%; max-width: 480px; background: #fff;
+  border-radius: var(--radius); box-shadow: 0 30px 60px -15px rgba(15,23,42,.5);
+  padding: 28px; animation: pop .25s ease;
+}
+@keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(120%);
+  z-index: 80; background: var(--primary); color: #fff;
+  padding: 14px 22px; border-radius: 999px; font-weight: 700; box-shadow: var(--clay);
+  display: flex; align-items: center; gap: 10px; transition: transform .35s cubic-bezier(.2,.8,.3,1);
+  max-width: 92vw;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ---------- Decorative blobs ---------- */
+.blob { position: absolute; border-radius: 50%; filter: blur(40px); opacity: .5; z-index: 0; pointer-events: none; }
+
+/* ---------- Misc ---------- */
+.divider { height: 1px; background: var(--line); border: 0; }
+.muted { color: var(--ink-soft); }
+.icon-tile {
+  width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; flex: none;
+  box-shadow: var(--clay-sm);
+}
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренеры — Спортика | Опытные детские тренеры</title>
+  <meta name="description" content="Тренеры детской спортивной школы «Спортика»: опыт, специализация, достижения. Выберите тренера для вашего ребёнка и запишитесь на пробное занятие.">
+  <link rel="canonical" href="https://sportika.example/trenery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { primary: '#1E3A8A', secondary: '#3B82F6', cta: '#F97316', bg: '#EFF6FF' },
+      fontFamily: { display: ['"Baloo 2"', 'sans-serif'], body: ['Nunito', 'sans-serif'] }
+    } } };
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-x" style="display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <span class="brand-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span>
+        <span class="font-display" style="font-size:22px;font-weight:700;color:var(--primary);">Спортика</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Главное меню">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="napravleniya.html">Направления</a>
+        <a class="nav-link" href="raspisanie.html">Расписание</a>
+        <a class="nav-link is-current" href="trenery.html">Тренеры</a>
+        <a class="nav-link" href="oplata.html">Оплата</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3">
+        <a class="btn btn-ghost btn-sm" href="cabinet.html">Войти</a>
+        <button class="btn btn-cta btn-sm" data-open-booking="">Записаться на пробное</button>
+      </div>
+      <button class="lg:hidden btn btn-ghost btn-sm" data-burger aria-label="Меню" aria-expanded="false" style="padding:10px 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="lg:hidden container-x pb-4" data-mobile-nav hidden>
+      <div class="clay-soft p-3 flex flex-col gap-1">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="napravleniya.html">Направления</a>
+        <a class="nav-link" href="raspisanie.html">Расписание</a>
+        <a class="nav-link" href="trenery.html">Тренеры</a>
+        <a class="nav-link" href="oplata.html">Оплата</a>
+        <a class="nav-link" href="cabinet.html">Личный кабинет</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-bottom:24px;">
+      <div class="container-x">
+        <nav class="muted text-sm mb-4" aria-label="Хлебные крошки"><a href="index.html" style="color:var(--secondary);text-decoration:none;">Главная</a> / Тренеры</nav>
+        <span class="eyebrow">Наша команда</span>
+        <h1 style="font-size:clamp(32px,5vw,52px);margin:12px 0;">Тренеры, которым доверяют дети и родители</h1>
+        <p class="muted" style="font-size:18px;max-width:60ch;">Профильное образование, опыт работы с детьми и регулярная аттестация. Выберите тренера и запишитесь на пробное.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px;">
+      <div class="container-x grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Trainer card -->
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#3B82F6,#1E3A8A);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#1E3A8A;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">ОП</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Ольга Петрова</h2><span class="badge badge-blue">12 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Спортивная гимнастика · КМС</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Готовит малышей и разрядников. Мягкий подход к новичкам, строгая техника для продвинутых.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">3–5 лет</span><span class="chip" style="cursor:default;">6–9 лет</span><span class="chip" style="cursor:default;">Гимнастика</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Ольга Петрова">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#FB7185,#E11D48);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#E11D48;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">РК</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Рустам Каримов</h2><span class="badge badge-blue">9 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Дзюдо, самбо · МС</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Чемпион региона по дзюдо. Учит дисциплине, уважению и уверенности без агрессии.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">6–9 лет</span><span class="chip" style="cursor:default;">10–14 лет</span><span class="chip" style="cursor:default;">Единоборства</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Рустам Каримов">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#22D3EE,#0891B2);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#0891B2;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">АН</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Анна Новак</h2><span class="badge badge-blue">7 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Плавание · тренер высшей категории</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Ставит технику с нуля, работает со страхом воды. Готовит к первым соревнованиям.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">3–5 лет</span><span class="chip" style="cursor:default;">10–14 лет</span><span class="chip" style="cursor:default;">Плавание</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Анна Новак">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#34D399,#059669);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#059669;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">МЛ</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Максим Лебедев</h2><span class="badge badge-blue">10 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Игровые виды, ОФП</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Заряжает энергией и любовью к командному спорту. Развивает ловкость и характер.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">6–9 лет</span><span class="chip" style="cursor:default;">10–14 лет</span><span class="chip" style="cursor:default;">Игровые</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Максим Лебедев">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#A78BFA,#7C3AED);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#7C3AED;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">ИС</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Иван Седов</h2><span class="badge badge-blue">6 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Спортивная гимнастика · акробатика</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Специалист по акробатике и прыжкам. Превращает тренировки в увлекательную игру.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">6–9 лет</span><span class="chip" style="cursor:default;">Гимнастика</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Иван Седов">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clay card-hover" style="padding:0;overflow:hidden;" data-reveal>
+          <div style="height:160px;background:linear-gradient(135deg,#FBBF24,#D97706);display:grid;place-items:center;position:relative;">
+            <span style="width:96px;height:96px;border-radius:50%;background:#fff;color:#D97706;display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:34px;box-shadow:var(--clay-sm);">ЕВ</span>
+            <button class="btn btn-cta btn-sm" style="position:absolute;bottom:12px;right:12px;padding:8px 12px;" aria-label="Видео тренера"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between"><h2 class="text-xl">Елена Волкова</h2><span class="badge badge-blue">8 лет опыта</span></div>
+            <p class="muted text-sm mt-1">Плавание · малыши</p>
+            <p class="mt-3 text-sm" style="color:var(--ink);">Адаптирует самых маленьких к воде. Бесконечное терпение и тёплая атмосфера.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip" style="cursor:default;">3–5 лет</span><span class="chip" style="cursor:default;">Плавание</span>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button class="btn btn-cta btn-sm" data-open-booking="Тренер: Елена Волкова">Выбрать тренера</button>
+              <a class="btn btn-ghost btn-sm" href="raspisanie.html">Расписание</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--primary);color:#DBEAFE;">
+    <div class="container-x" style="padding-block:56px;">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;"><span class="brand-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span><span class="font-display" style="font-size:22px;color:#fff;font-weight:700;">Спортика</span></div>
+          <p class="mt-4 text-sm" style="color:#BFDBFE;">Детская спортивная школа. Воспитываем здоровье, характер и радость движения с 2013 года.</p>
+        </div>
+        <div><h4 style="color:#fff;font-size:16px;">Навигация</h4><ul class="mt-3 flex flex-col gap-2 text-sm"><li><a href="napravleniya.html" style="color:#BFDBFE;text-decoration:none;">Направления</a></li><li><a href="raspisanie.html" style="color:#BFDBFE;text-decoration:none;">Расписание</a></li><li><a href="trenery.html" style="color:#BFDBFE;text-decoration:none;">Тренеры</a></li><li><a href="oplata.html" style="color:#BFDBFE;text-decoration:none;">Оплата</a></li><li><a href="cabinet.html" style="color:#BFDBFE;text-decoration:none;">Личный кабинет</a></li></ul></div>
+        <div><h4 style="color:#fff;font-size:16px;">Контакты</h4><ul class="mt-3 flex flex-col gap-2 text-sm" style="color:#BFDBFE;"><li>Москва, ул. Спортивная, 12</li><li><a href="tel:+74951234567" style="color:#fff;text-decoration:none;font-weight:700;">+7 (495) 123-45-67</a></li><li>ежедневно 9:00–21:00</li></ul></div>
+        <div><h4 style="color:#fff;font-size:16px;">Готовы начать?</h4><p class="text-sm mt-3" style="color:#BFDBFE;">Первое занятие бесплатно.</p><button class="btn btn-cta btn-sm mt-3" data-open-booking="">Записаться</button></div>
+      </div>
+      <hr class="divider" style="background:#3B5BA9;margin-block:28px;">
+      <div class="flex flex-wrap justify-between gap-3 text-sm" style="color:#93C5FD;"><span>© <span data-year></span> Спортика. Все права защищены.</span><span>Политика конфиденциальности · Договор оферты</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-cta"><button class="btn btn-cta btn-block" data-open-booking="">Записаться на пробное</button></div>
+
+  <div class="modal-backdrop" data-modal="booking" hidden role="dialog" aria-modal="true" aria-labelledby="bk-title">
+    <div class="modal">
+      <div class="flex items-start justify-between gap-4">
+        <div><h3 id="bk-title" style="font-size:24px;">Запись к тренеру</h3><p class="muted text-sm mt-1" data-modal-context hidden></p></div>
+        <button data-close-modal aria-label="Закрыть" class="btn btn-ghost btn-sm" style="padding:8px;min-height:auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <form class="mt-5" data-mock-form data-success="Готово! Передали заявку выбранному тренеру.">
+        <div class="field"><label for="m-name">Имя родителя</label><input id="m-name" name="name" type="text" required autocomplete="name" placeholder="Анна"></div>
+        <div class="field mt-4"><label for="m-phone">Телефон</label><input id="m-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <div class="field"><label for="m-dir">Направление</label><select id="m-dir" name="direction"><option>Гимнастика</option><option>Единоборства</option><option>Плавание</option><option>Игровые виды</option><option>Ещё не выбрали</option></select></div>
+          <div class="field"><label for="m-age">Возраст</label><select id="m-age" name="age"><option>3–5 лет</option><option>6–9 лет</option><option>10–14 лет</option></select></div>
+        </div>
+        <label class="flex items-start gap-3 mt-4" style="font-size:13px;color:var(--ink-soft);cursor:pointer;"><input type="checkbox" required style="width:18px;height:18px;margin-top:3px;flex:none;"><span>Согласен на обработку персональных данных.</span></label>
+        <button type="submit" class="btn btn-cta btn-block mt-5">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
